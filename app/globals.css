@@ -557,9 +557,9 @@ h2.section-title-purple {
 
 .products-grid-new {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -576,7 +576,6 @@ h2.section-title-purple {
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -1500,15 +1499,30 @@ footer.new-footer-style {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1rem;
+    max-width: 100%;
   }
   
   .product-card-new {
     max-width: 100%;
     margin: 0 auto;
+    width: 100%;
   }
   
   .product-image-new {
     height: 160px;
+  }
+  
+  /* Status indicator mobile adjustments */
+  .status-indicator {
+    bottom: 8px;
+    left: 8px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .status-indicator .status-dot {
+    width: 6px;
+    height: 6px;
   }
   
   /* FAQ section mobile */
@@ -1619,26 +1633,33 @@ footer.new-footer-style {
     .hero-feature-item p {
         font-size: 0.75rem;
     }
-
-    .mobile-menu-item {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    .mobile-menu-header {
-        padding: 1rem;
-    }
-
-    .mobile-discord-btn {
-        margin: 0.5rem 1rem;
-    }
-
-    .status-modal-content {
-        padding: 1rem;
-    }
-
-    .status-stats-grid {
+    
+    /* Product cards on very small screens */
+    .products-grid-new {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .product-card-new {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .product-image-new {
+        height: 140px;
+    }
+    
+    .status-indicator {
+        bottom: 6px;
+        left: 6px;
+        padding: 3px 8px;
+        font-size: 0.65rem;
+    }
+    
+    .status-indicator .status-dot {
+        width: 5px;
+        height: 5px;
     }
 }
 
@@ -1656,6 +1677,29 @@ footer.new-footer-style {
     height: 140px;
   }
   
+  .mobile-menu-item {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+  }
+
+  .mobile-menu-header {
+      padding: 1rem;
+  }
+
+  .mobile-discord-btn {
+      margin: 0.5rem 1rem;
+  }
+
+  .status-modal-content {
+      padding: 1rem;
+  }
+
+  .status-stats-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
   .status-hero .hero-left-content h1 {
     font-size: 1.8rem;
   }
