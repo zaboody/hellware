@@ -178,7 +178,7 @@ export default function Home() {
                 <div className="product-footer-new">
                   <div className="price-info-new">
                     <span className="price-label-new">Starting at</span>
-                    <span className="price-new">Depends On Order</span>
+                    <span className="price-new">N/A</span>
                   </div>
                 </div>
               </div>
