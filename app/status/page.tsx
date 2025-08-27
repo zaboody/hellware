@@ -102,8 +102,8 @@ export default function Status() {
                 <div className="status-product-description">Last Updated: 2025-08-26</div>
               </div>
               <div className="status-product-status">
-                <div className="status-dot available"></div>
-                <span className="status-text available"></span>
+                <div className="status-legend-dot development"></div>
+                <span className="status-text development"></span>
               </div>
             </div>
 
@@ -113,8 +113,8 @@ export default function Status() {
                 <div className="status-product-description">Last Updated: 2025-08-26</div>
               </div>
               <div className="status-product-status">
-                <div className="status-dot available"></div>
-                <span className="status-text available"></span>
+                <div className="status-legend-dot development"></div>
+                <span className="status-text development"></span>
               </div>
             </div>
 
@@ -124,7 +124,7 @@ export default function Status() {
                 <div className="status-product-description">Last Updated: N/A</div>
               </div>
               <div className="status-product-status">
-                <div className="status-dot available"></div>
+                <div className="status-legend-dot available"></div>
                 <span className="status-text available"></span>
               </div>
             </div>
@@ -145,9 +145,9 @@ export default function Status() {
           <div className="footer-column">
             <h4>Products</h4>
             <ul>
-              <li><a href="/#products">Accounts</a></li>
-              <li><a href="/#products">Rainbow Six Siege Full</a></li>
-              <li><a href="/#products">Rainbow Six Siege Lite</a></li>
+              <li><a href="https://discord.gg/hellware" target="_blank">Accounts</a></li>
+              <li><a href="/product-r6-full">Rainbow Six Siege Full</a></li>
+              <li><a href="/product-r6-lite">Rainbow Six Siege Lite</a></li>
             </ul>
           </div>
           <div className="footer-column">

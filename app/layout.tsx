@@ -1,62 +1,41 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
+const inter = Inter({ subsets: ['latin'] })
+
 export const metadata: Metadata = {
-  title: 'Hellware',
-  description: 'Ruin The Game With Hellware\'s Products. Never Lose Again.',
-  keywords: ['gaming', 'tools', 'hellware', 'competitive', 'undetected'],
+  title: 'Hellware - Ruin The Game With Hellware\'s Products',
+  description: 'Ruin The Game With Hellware\'s Products',
+  keywords: 'Hellware, gaming, cheats, hacks, Rainbow Six Siege',
   authors: [{ name: 'Hellware' }],
   creator: 'Hellware',
   publisher: 'Hellware',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://hellware.vercel.app'),
-  alternates: {
-    canonical: '/',
-  },
+  robots: 'index, follow',
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://hellware.vercel.app',
-    siteName: 'Hellware',
     title: 'Hellware - Ruin The Game With Hellware\'s Products',
-    description: 'Ruin The Game With Hellware\'s Products. Never Lose Again.',
+    description: 'Ruin The Game With Hellware\'s Products',
+    url: 'https://hellware.com',
+    siteName: 'Hellware',
     images: [
       {
-        url: '/LOGO.png',
+        url: '/banner.png',
         width: 1200,
         height: 630,
         alt: 'Hellware Logo',
       },
     ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Hellware - Ruin The Game With Hellware\'s Products',
-    description: 'Ruin The Game With Hellware\'s Products. Never Lose Again.',
-    images: ['/LOGO.png'],
-    creator: '@hellware',
-    site: '@hellware',
+    description: 'Ruin The Game With Hellware\'s Products',
+    images: ['/banner.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
-  category: 'gaming',
-  classification: 'gaming tools and services',
+  themeColor: '#ff4444',
+  viewport: 'width=device-width, initial-scale=1',
 }
 
 export default function RootLayout({
@@ -67,13 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#ff4444" />
-        <meta name="msapplication-TileColor" content="#ff4444" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="icon" href="/LOGO.png" />
-        <link rel="apple-touch-icon" href="/LOGO.png" />
+        <script src="https://sellauth.com/assets/js/sellauth-embed-2.js"></script>
       </head>
-      <body>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }

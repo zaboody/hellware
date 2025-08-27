@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -132,60 +133,66 @@ export default function Home() {
 
           <div className="products-grid-new">
             <div className="product-card-new" data-category="cheats">
-              <div className="product-image-new">
-                <Image src="/r6_full.png" alt="R6 Full" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
-              </div>
-              <div className="product-content-new">
-                <h3 className="product-name-new">Rainbow Six Siege Full</h3>
-                <div className="product-footer-new">
-                  <div className="price-info-new">
-                    <span className="price-label-new">Starting at</span>
-                    <span className="price-new">$4.99</span>
+              <Link href="/product-r6-full" className="product-link">
+                <div className="product-image-new">
+                  <Image src="/r6_full.png" alt="R6 Full" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
+                </div>
+                <div className="product-content-new">
+                  <h3 className="product-name-new">Rainbow Six Siege Full</h3>
+                  <div className="product-footer-new">
+                    <div className="price-info-new">
+                      <span className="price-label-new">Starting at</span>
+                      <span className="price-new">$4.99</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="status-indicator updating">
-                <span className="status-dot"></span>
-                Updating
-              </div>
+                <div className="status-indicator updating">
+                  <span className="status-dot"></span>
+                  Updating
+                </div>
+              </Link>
             </div>
 
             <div className="product-card-new" data-category="cheats">
-              <div className="product-image-new">
-                <Image src="/r6_lite.png" alt="R6 Lite" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
-              </div>
-              <div className="product-content-new">
-                <h3 className="product-name-new">Rainbow Six Siege Lite</h3>
-                <div className="product-footer-new">
-                  <div className="price-info-new">
-                    <span className="price-label-new">Starting at</span>
-                    <span className="price-new">$3.99</span>
+              <Link href="/product-r6-lite" className="product-link">
+                <div className="product-image-new">
+                  <Image src="/r6_lite.png" alt="R6 Lite" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
+                </div>
+                <div className="product-content-new">
+                  <h3 className="product-name-new">Rainbow Six Siege Lite</h3>
+                  <div className="product-footer-new">
+                    <div className="price-info-new">
+                      <span className="price-label-new">Starting at</span>
+                      <span className="price-new">$3.99</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="status-indicator updating">
-                <span className="status-dot"></span>
-                Updating
-              </div>
+                <div className="status-indicator updating">
+                  <span className="status-dot"></span>
+                  Updating
+                </div>
+              </Link>
             </div>
 
             <div className="product-card-new" data-category="cheats">
-              <div className="product-image-new">
-                <Image src="/fa_accounts_banenr_things.png" alt="Accounts" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
-              </div>
-              <div className="product-content-new">
-                <h3 className="product-name-new">Accounts</h3>
-                <div className="product-footer-new">
-                  <div className="price-info-new">
-                    <span className="price-label-new">Starting at</span>
-                    <span className="price-new">N/A</span>
+              <a href="https://discord.gg/hellware" target="_blank" className="product-link" style={{ textDecoration: 'none' }}>
+                <div className="product-image-new">
+                  <Image src="/fa_accounts_banenr_things.png" alt="Accounts" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
+                </div>
+                <div className="product-content-new">
+                  <h3 className="product-name-new">Accounts</h3>
+                  <div className="product-footer-new">
+                    <div className="price-info-new">
+                      <span className="price-label-new">Starting at</span>
+                      <span className="price-new">N/A</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="status-indicator undetected">
-                <span className="status-dot"></span>
-                Avaliable
-              </div>
+                <div className="status-indicator undetected">
+                  <span className="status-dot"></span>
+                  Available
+                </div>
+              </a>
             </div>
             
 
@@ -283,9 +290,9 @@ export default function Home() {
           <div className="footer-column">
             <h4>Products</h4>
             <ul>
-              <li><a href="#products">Accounts</a></li>
-              <li><a href="#products">Rainbow Six Siege Full</a></li>
-              <li><a href="#products">Rainbow Six Siege Lite</a></li>
+              <li><a href="https://discord.gg/hellware" target="_blank">Accounts</a></li>
+              <li><a href="/product-r6-full">Rainbow Six Siege Full</a></li>
+              <li><a href="/product-r6-lite">Rainbow Six Siege Lite</a></li>
             </ul>
           </div>
           <div className="footer-column">
