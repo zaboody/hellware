@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'Hellware',
     images: [
       {
-        url: '/banner.png',
+        url: 'https://github.com/zaboody/hellware/blob/main/public/banner.png?raw=true',
         width: 1200,
         height: 630,
         alt: 'Hellware Banner',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
-    images: ['/banner.png'],
+    images: ['https://github.com/zaboody/hellware/blob/main/public/banner.png?raw=true'],
   },
   themeColor: '#ff4444',
   viewport: 'width=device-width, initial-scale=1',
