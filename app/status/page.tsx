@@ -120,6 +120,17 @@ export default function Status() {
 
             <div className="status-product-item">
               <div className="status-product-info">
+                <div className="status-product-name">Zenith</div>
+                <div className="status-product-description">Last Updated: 2025-08-29</div>
+              </div>
+              <div className="status-product-status">
+                <div className="status-legend-dot available"></div>
+                <span className="status-text available"></span>
+              </div>
+            </div>
+
+            <div className="status-product-item">
+              <div className="status-product-info">
                 <div className="status-product-name">Full Access Accounts</div>
                 <div className="status-product-description">Last Updated: N/A</div>
               </div>
@@ -128,6 +139,8 @@ export default function Status() {
                 <span className="status-text available"></span>
               </div>
             </div>
+
+            
           </div>
         </div>
       </section>
@@ -148,6 +161,7 @@ export default function Status() {
               <li><a href="https://discord.gg/hellware" target="_blank">Accounts</a></li>
               <li><a href="/product-r6-full">Rainbow Six Siege Full</a></li>
               <li><a href="/product-r6-lite">Rainbow Six Siege Lite</a></li>
+              <li><a href="/product-zenith">Zenith</a></li>
             </ul>
           </div>
           <div className="footer-column">

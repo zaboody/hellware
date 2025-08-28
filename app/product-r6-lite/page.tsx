@@ -16,9 +16,9 @@ export default function R6LiteProduct() {
   const [selectedVariant, setSelectedVariant] = useState('')
   const [quantity, setQuantity] = useState(1)
   const [variants, setVariants] = useState<Variant[]>([
-    { id: 'day', name: 'Day Key', price: 3.99, stock: 0, sellauthId: '647539' },
-    { id: 'week', name: 'Week Key', price: 9.99, stock: 0, sellauthId: '647540' },
-    { id: 'month', name: 'Month Key', price: 24.99, stock: 0, sellauthId: '647541' }
+    { id: 'day', name: 'Day Key', price: 4.00, stock: 0, sellauthId: '647539' },
+    { id: 'week', name: 'Week Key', price: 10.00, stock: 0, sellauthId: '647540' },
+    { id: 'month', name: 'Month Key', price: 25.00, stock: 0, sellauthId: '647541' }
   ])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -238,6 +238,7 @@ export default function R6LiteProduct() {
               <li><Link href="https://discord.gg/hellware" target="_blank">Accounts</Link></li>
               <li><Link href="/product-r6-full">Rainbow Six Siege Full</Link></li>
               <li><Link href="/product-r6-lite">Rainbow Six Siege Lite</Link></li>
+              <li><Link href="/product-zenith">Zenith</Link></li>
             </ul>
           </div>
           <div className="footer-column">

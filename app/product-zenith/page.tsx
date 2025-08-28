@@ -12,15 +12,16 @@ interface Variant {
   sellauthId: string
 }
 
-export default function R6FullProduct() {
+export default function ZenithProduct() {
   const [selectedVariant, setSelectedVariant] = useState('')
   const [quantity, setQuantity] = useState(1)
   const [variants, setVariants] = useState<Variant[]>([
-    { id: 'day', name: 'Day Key', price: 5.00, stock: 0, sellauthId: '647543' },
-    { id: 'week', name: 'Week Key', price: 12.00, stock: 0, sellauthId: '647544' },
-    { id: 'month', name: 'Month Key', price: 30.00, stock: 0, sellauthId: '647545' }
+    { id: 'day', name: 'Day Key', price: 5.00, stock: 0, sellauthId: '652656' },
+    { id: 'week', name: 'Week Key', price: 10.00, stock: 0, sellauthId: '652657' },
+    { id: 'month', name: 'Month Key', price: 18.50, stock: 0, sellauthId: '652658' }
   ])
   const [isLoading, setIsLoading] = useState(true)
+
   // Fetch real-time stock from Sellauth
   useEffect(() => {
     const fetchStock = async () => {
@@ -84,7 +85,7 @@ export default function R6FullProduct() {
     if (typeof window !== 'undefined' && (window as any).sellAuthEmbed) {
       (window as any).sellAuthEmbed.checkout(document.body, { 
         cart: [{ 
-          productId: parseInt(process.env.R6_FULL_PRODUCT_ID || '443622'), 
+          productId: parseInt(process.env.NEXT_PUBLIC_ZENITH_PRODUCT_ID || '446671'), 
           variantId: parseInt(selectedVariantData.sellauthId), 
           quantity: quantity 
         }],
@@ -95,8 +96,6 @@ export default function R6FullProduct() {
       console.error('Sellauth embed script not loaded');
     }
   };
-
-
 
   if (isLoading) {
     return (
@@ -138,43 +137,62 @@ export default function R6FullProduct() {
           <div className="product-left-section">
             <div className="product-image-container">
               <Image 
-                src="/r6_full.png" 
-                alt="Rainbow Six Siege Full" 
+                src="/zenith.png" 
+                alt="Zenith" 
                 width={400} 
                 height={300} 
                 className="product-main-image"
               />
-              <div className="status-indicator updating">
+              <div className="status-indicator undetected">
                 <span className="status-dot"></span>
-                Updating
+                Undetected
               </div>
             </div>
             
             <div className="product-description-panel">
               <h3>Product Details</h3>
               <div className="product-features">
-                <p style={{ color: 'var(--text-secondary-gray)', textAlign: 'center', fontSize: '1rem' }}>
-                  No features yet
+                <p style={{ color: 'var(--text-secondary-gray)', fontSize: '1rem', lineHeight: '1.6' }}>
+                  <strong>Features:</strong><br />
+                  [-] Built In Spoofer/Blocker<br />
+                  [-] 100% Undetected<br />
+                  [-] Unlock all<br />
+                  [-] Aimbot<br />
+                  [-] Zombie Support<br />
+                  [-] Fully Customizable ESP<br />
+                  [-] Supports Windows Versions 10 & win 11 24h2<br />
+                  [-] Smooth ESP<br />
+                  [-] Controller Support<br />
+                  [-] Steam Battle net And GamePass Supported<br />
+                  <br />
+                  <em>Much more!</em>
                 </p>
               </div>
             </div>
           </div>
 
           <div className="product-right-section">
-            <h1 className="product-title">Rainbow Six Siege Full</h1>
+            <h1 className="product-title">Zenith</h1>
             
-            <div className="variant-selection" style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <div className="variant-selection">
               <h3>Select Variant</h3>
               {variants.map((variant) => (
                 <div 
                   key={variant.id}
-                  className="variant-option disabled"
-                  style={{ cursor: 'not-allowed' }}
+                  className={`variant-option ${selectedVariant === variant.id ? 'selected' : ''} ${variant.stock === 0 ? 'disabled' : ''}`}
+                  onClick={() => {
+                    if (variant.stock > 0) {
+                      setSelectedVariant(selectedVariant === variant.id ? '' : variant.id)
+                      if (selectedVariant !== variant.id) {
+                        setQuantity(1)
+                      }
+                    }
+                  }}
                 >
                   <div className="variant-info">
                     <span className="variant-name">{variant.name}</span>
-                    <span className="variant-stock" style={{ fontSize: '0.9rem', color: 'var(--text-secondary-gray)' }}>
-                      Currently Unavailable
+                    <span className="variant-stock">
+                      {variant.stock > 0 ? `${variant.stock} left` : 'Out of Stock'}
                     </span>
                   </div>
                   <div className="variant-price">${variant.price.toFixed(2)}</div>
@@ -182,27 +200,30 @@ export default function R6FullProduct() {
               ))}
             </div>
 
-            <div className="quantity-section" style={{ opacity: 0.5, pointerEvents: 'none' }}>
+            <div className="quantity-section">
               <label>Quantity</label>
               <div className="quantity-controls">
                 <button 
                   className="quantity-btn"
-                  disabled={true}
-                  style={{ 
-                    opacity: 0.5,
-                    cursor: 'not-allowed'
-                  }}
+                  onClick={decreaseQuantity}
+                  disabled={quantity === 1}
                 >
                   -
                 </button>
-                <span className="quantity-display">1</span>
-                <button className="quantity-btn" disabled={true} style={{ opacity: 0.5, cursor: 'not-allowed' }}>+</button>
+                <span className="quantity-display">{quantity}</span>
+                <button 
+                  className="quantity-btn" 
+                  onClick={increaseQuantity}
+                  disabled={!selectedVariantData || quantity >= selectedVariantData.stock}
+                >
+                  +
+                </button>
               </div>
             </div>
 
-            <div className="total-section" style={{ opacity: 0.5 }}>
+            <div className="total-section">
               <span>Total:</span>
-              <span className="total-price">$0.00</span>
+              <span className="total-price">${totalPrice.toFixed(2)}</span>
             </div>
 
             <button 
@@ -215,16 +236,14 @@ export default function R6FullProduct() {
                 cursor: !selectedVariant ? 'not-allowed' : 'pointer'
               }}
             >
-              <i className="fas fa-clock"></i>
-              Currently Updating | Check Back Later
+              <i className="fas fa-shopping-cart"></i>
+              {!selectedVariant ? 'Select a Variant' : 'Purchase'}
             </button>
           </div>
         </div>
       </div>
 
-
-
-      <footer className="new-footer-style"> 
+      <footer className="new-footer-style">
         <div className="footer-main-content">
           <div className="footer-column">
             <span className="footer-logo-text">Hellware</span>
@@ -265,7 +284,7 @@ export default function R6FullProduct() {
                className="made-by-rook-footer"
                style={{ cursor: "pointer" }}
                onClick={() => window.open("https://rook.website", "_blank")}>
-               <i className="fas fa-code rook-icon"></i>
+               <i className="fab fa-code rook-icon"></i>
                <span className="made-by-text">Made By</span><span>Rook</span>
           </div>
         </div>

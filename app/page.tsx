@@ -175,6 +175,27 @@ export default function Home() {
             </div>
 
             <div className="product-card-new" data-category="cheats">
+              <Link href="/product-zenith" className="product-link">
+                <div className="product-image-new">
+                  <Image src="/zenith.png" alt="Zenith" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
+                </div>
+                <div className="product-content-new">
+                  <h3 className="product-name-new">Zenith</h3>
+                  <div className="product-footer-new">
+                    <div className="price-info-new">
+                      <span className="price-label-new">Starting at</span>
+                      <span className="price-new">$5.00</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="status-indicator undetected">
+                  <span className="status-dot"></span>
+                  Undetected
+                </div>
+              </Link>
+            </div>
+
+            <div className="product-card-new" data-category="cheats">
               <a href="https://discord.gg/hellware" target="_blank" className="product-link" style={{ textDecoration: 'none' }}>
                 <div className="product-image-new">
                   <Image src="/fa_accounts_banenr_things.png" alt="Accounts" fill sizes="100%" style={{ objectFit: 'contain' }} loading="lazy" />
@@ -293,6 +314,7 @@ export default function Home() {
               <li><a href="https://discord.gg/hellware" target="_blank">Accounts</a></li>
               <li><a href="/product-r6-full">Rainbow Six Siege Full</a></li>
               <li><a href="/product-r6-lite">Rainbow Six Siege Lite</a></li>
+              <li><a href="/product-zenith">Zenith</a></li>
             </ul>
           </div>
           <div className="footer-column">

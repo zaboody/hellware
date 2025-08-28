@@ -20,7 +20,11 @@ export async function GET(request: Request) {
       // R6 Full variants
       '647543': '443622', // Day -> R6 Full
       '647544': '443622', // Week -> R6 Full
-      '647545': '443622'  // Month -> R6 Full
+        '647545': '443622', // Month -> R6 Full
+      // Zenith variants
+      '652656': '446671', // Day -> Zenith
+      '652657': '446671', // Week -> Zenith
+      '652658': '446671'  // Month -> Zenith
     }
     
     const productId = variantToProductMap[variantId]
