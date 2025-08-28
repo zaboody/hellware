@@ -5,6 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hellware.vercel.app'),
   title: 'Hellware',
   description: 'Ruin The Game With Hellware\'s Products',
   keywords: 'Hellware, gaming, cheats, hacks, Rainbow Six Siege',
@@ -15,14 +16,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
-    url: 'https://hellware.vip',
+    url: 'https://hellware.vercel.app',
     siteName: 'Hellware',
     images: [
       {
-        url: 'https://github.com/zaboody/hellware/blob/main/public/banner.png?raw=true',
+        url: 'https://hellware.vercel.app/banner.png',
         width: 1200,
         height: 630,
         alt: 'Hellware Banner',
+        type: 'image/png',
       },
     ],
     locale: 'en_US',
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
-    images: ['https://github.com/zaboody/hellware/blob/main/public/banner.png?raw=true'],
+    images: ['https://hellware.vercel.app/banner.png'],
   },
   themeColor: '#ff4444',
   viewport: 'width=device-width, initial-scale=1',
