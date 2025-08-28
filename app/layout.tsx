@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Hellware - Ruin The Game With Hellware\'s Products',
+  title: 'Hellware',
   description: 'Ruin The Game With Hellware\'s Products',
   keywords: 'Hellware, gaming, cheats, hacks, Rainbow Six Siege',
   authors: [{ name: 'Hellware' }],
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
   publisher: 'Hellware',
   robots: 'index, follow',
   openGraph: {
-    title: 'Hellware - Ruin The Game With Hellware\'s Products',
+    title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
-    url: 'https://hellware.com',
+    url: 'https://hellware.vip',
     siteName: 'Hellware',
     images: [
       {
         url: '/banner.png',
         width: 1200,
         height: 630,
-        alt: 'Hellware Logo',
+        alt: 'Hellware Banner',
       },
     ],
     locale: 'en_US',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hellware - Ruin The Game With Hellware\'s Products',
+    title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
     images: ['/banner.png'],
   },
