@@ -5,7 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hellware.vip'),
+  metadataBase: new URL('https://www.hellware.vip'),
   title: 'Hellware',
   description: 'Ruin The Game With Hellware\'s Products',
   keywords: 'Hellware, gaming, cheats, hacks, Rainbow Six Siege',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Hellware',
     description: 'Ruin The Game With Hellware\'s Products',
-    url: 'https://hellware.vip',
+    url: 'https://www.hellware.vip',
     siteName: 'Hellware',
     images: [
       {
